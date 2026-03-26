@@ -208,3 +208,7 @@ __marimo__/
 
 .vscode/
 .DS_Store
+
+OPENAI_API_KEY=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
+OPENAI_BASE_URL=https://openrouter.ai/api/v1
+OPENAI_MODEL=openrouter/auto
