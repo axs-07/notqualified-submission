@@ -1,0 +1,44 @@
+{
+  "name": "florence-beauty-support-agent",
+  "description": "AI agent for Florence Beauty India that handles customer support queries including account help, shipping, delivery, returns, refunds, billing issues, shade mismatch, product guidance, skin reaction concerns, and escalation to human agents.",
+  "version": "1.0.0",
+  "url": "http://localhost:5000/",
+  "default_input_modes": ["text"],
+  "default_output_modes": ["text"],
+  "capabilities": {
+    "streaming": true
+  },
+  "skills": [
+    {
+      "id": "florence_beauty_customer_support",
+      "name": "Florence Beauty Customer Support",
+      "description": "Handles Florence Beauty India customer queries including order tracking, returns, refunds, billing, damaged or wrong items, shade guidance, account issues, product safety concerns, and escalation.",
+      "tags": [
+        "florence-beauty",
+        "customer-support",
+        "beauty",
+        "makeup",
+        "skincare",
+        "shipping",
+        "delivery",
+        "returns",
+        "refunds",
+        "billing",
+        "order-status",
+        "shade-matching",
+        "product-guidance",
+        "skin-reaction",
+        "escalation"
+      ],
+      "examples": [
+        "How do I reset my Florence Beauty password?",
+        "Where is my order ORD123?",
+        "My package says delivered but I did not receive it.",
+        "I received the wrong shade. Can I return it?",
+        "I was charged twice for my order.",
+        "A product caused irritation on my skin.",
+        "Connect me to a human agent."
+      ]
+    }
+  ]
+}
