@@ -1,7 +1,6 @@
 import logging
 import os
 
-import click
 import uvicorn
 from dotenv import load_dotenv
 from starlette.applications import Starlette
@@ -18,10 +17,7 @@ load_dotenv()
 logging.basicConfig()
 
 
-@click.command()
-@click.option("--host", "host", default="localhost")
-@click.option("--port", "port", default=5000)
-def main(host: str, port: int):
+def main(host: str = "0.0.0.0", port: int = 5000):
     api_key = os.getenv("OPENAI_API_KEY")
     base_url = os.getenv("OPENAI_BASE_URL", "https://openrouter.ai/api/v1")
     model = os.getenv("OPENAI_MODEL", "openrouter/auto")
