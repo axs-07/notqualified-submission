@@ -1,0 +1,397 @@
+{
+  "company_name": "Florence Beauty India",
+  "document_title": "Official Customer Support Knowledge Base",
+  "version": "1.0",
+  "last_updated": "2026-03-26",
+  "agent_instructions": {
+    "tone": "Friendly, empathetic, and beauty-conscious. Always acknowledge the customer's concern before providing a solution, especially for skin sensitivity, shade mismatch, damaged items, or order issues.",
+    "response_format": "Use numbered steps for troubleshooting. Use bullet points for policy information. Keep responses under 200 words unless detailed steps are required.",
+    "escalation_rule": "If any escalation trigger is detected, STOP current conversation flow and call escalate_to_human immediately. Do not ask clarifying questions first.",
+    "clarification_limit": "If you need information from the customer, ask ONE focused question per turn. Do not ask multiple questions at once.",
+    "knowledge_lookup": "Always call get_relevant_knowledge before providing policy-based answers to ensure accuracy.",
+    "ticket_creation": "Create a support ticket whenever the issue cannot be resolved in the current session or requires follow-up, including allergic reactions, damaged/wrong items, payment disputes, or delivery investigations."
+  },
+  "categories": [
+    {
+      "category_name": "General Inquiries & Account Management",
+      "items": [
+        {
+          "id": "1.1",
+          "question": "How do I create a Florence Beauty account?",
+          "answer": "Customers can create an account using their email address or mobile number on the Florence Beauty website or app. An account allows users to track orders, save wishlists, store preferred shades, and checkout faster. Guest checkout may be available, but guest users may have limited order-history access."
+        },
+        {
+          "id": "1.2",
+          "question": "How do I reset my password?",
+          "answer": "Click 'Forgot Password' on the login page and enter the registered email address or mobile number. A reset OTP or link will be sent to the customer. The reset link or OTP expires after 10 minutes. If the customer does not receive it, advise them to check spam folders or confirm their registered contact details."
+        },
+        {
+          "id": "1.3",
+          "question": "Can I delete my account and personal data?",
+          "answer": "Yes. Customers can request account deletion under Account Settings > Privacy > Delete Account. Deletion requests may take up to 15 days to process fully. Active or pending orders must be completed or cancelled before deletion can proceed."
+        },
+        {
+          "id": "1.4",
+          "question": "How do I update my email address or phone number?",
+          "answer": "Customers can update their personal details under Account > Profile Settings > Edit Info. Changing the primary email or phone number may require OTP verification. If the customer has lost access to their registered contact details, they must submit an identity verification request through support."
+        },
+        {
+          "id": "1.5",
+          "question": "I see activity on my account that I don't recognize. What should I do?",
+          "answer": "Advise the customer to immediately reset their password and enable OTP-based login or two-factor verification if available. Create a fraud or account-security ticket and escalate to Tier 2 immediately. Do not share account or order details until the customer's identity is verified.",
+          "escalation_triggers": [
+            "Unauthorized account access suspected",
+            "Customer reports unknown or fraudulent order activity"
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Shipping, Delivery & Tracking SLAs",
+      "items": [
+        {
+          "id": "2.1",
+          "question": "What are your shipping options and timelines?",
+          "answer": "We offer multiple shipping options across India.",
+          "details": [
+            "Standard Shipping: 4-6 business days.",
+            "Express Shipping: 2-3 business days.",
+            "Same-Day Delivery: Available only in select metro cities for eligible orders."
+          ]
+        },
+        {
+          "id": "2.2",
+          "question": "My package is marked as 'Delivered' but I haven't received it. What do I do?",
+          "answer": "Follow these steps to resolve missing 'Delivered' packages.",
+          "steps": [
+            "Ask the customer to check with neighbors, security staff, reception, and around the delivery location.",
+            "Wait 24 hours, as courier partners may mark shipments delivered before final handoff.",
+            "If the package is still missing after 24 hours, initiate a 'Lost Package' ticket.",
+            "Do not issue a refund or replacement until the courier investigation is completed unless policy exception is approved.",
+            "If the courier confirms loss, issue a replacement or refund as per resolution policy."
+          ]
+        },
+        {
+          "id": "2.3",
+          "question": "Can I change my shipping address after placing an order?",
+          "answer": "Shipping addresses can only be modified within 1 hour of placing the order. Once the order status changes to 'Processing' or 'Packed', the address cannot be changed."
+        },
+        {
+          "id": "2.4",
+          "question": "My order is delayed and past the estimated delivery date. What can I do?",
+          "answer": "If an order is delayed beyond its expected delivery window, follow these steps.",
+          "steps": [
+            "Check the courier tracking page for the most recent update.",
+            "If there has been no tracking movement for 48-72 hours, create a delayed-shipment ticket.",
+            "Apologize for the delay and provide the latest available status.",
+            "If delay exceeds the service SLA, offer a goodwill coupon or store credit as permitted by policy."
+          ]
+        },
+        {
+          "id": "2.5",
+          "question": "Do you ship across India?",
+          "answer": "Yes. Florence Beauty ships to most serviceable PIN codes across India. Delivery timelines may be longer for remote or non-metro locations."
+        }
+      ]
+    },
+    {
+      "category_name": "Returns, Refunds & Exchanges",
+      "items": [
+        {
+          "id": "3.1",
+          "question": "What is the standard return policy?",
+          "answer": "Customers have 7 days from the date of delivery to request a return for eligible products. Returned items must be unused, unopened, and in their original sealed packaging unless the return is for a damaged, defective, or wrong item."
+        },
+        {
+          "id": "3.2",
+          "question": "What items are non-returnable?",
+          "answer": "The following items cannot be returned.",
+          "details": [
+            "Opened or used makeup products.",
+            "Used skincare items.",
+            "Lip products, mascaras, eyeliners, and similar hygiene-sensitive items once opened.",
+            "Items marked 'Final Sale' or 'Non-Returnable'.",
+            "Gift cards."
+          ]
+        },
+        {
+          "id": "3.3",
+          "question": "What should I do if I receive a damaged, leaked, or wrong product?",
+          "answer": "Follow these steps for damaged, leaked, defective, or incorrect items.",
+          "steps": [
+            "Ask the customer to share clear photos of the product, outer packaging, shipping label, and invoice if available.",
+            "Request an unboxing video if required by policy.",
+            "Create a support ticket immediately.",
+            "If verified, offer a replacement or refund according to policy."
+          ]
+        },
+        {
+          "id": "3.4",
+          "question": "How long do refunds take to process?",
+          "answer": "Once the return or claim is approved, the refund is typically processed within 3-5 business days. After processing, banks and payment providers may take an additional 5-7 business days to reflect the funds."
+        },
+        {
+          "id": "3.5",
+          "question": "Do you offer exchanges?",
+          "answer": "We do not offer direct exchanges. Customers must return the eligible product for a refund and place a new order separately."
+        },
+        {
+          "id": "3.6",
+          "question": "Can I return a product if the shade does not suit me?",
+          "answer": "Shade mismatch returns are generally only accepted if the product is unopened and unused. Opened complexion or color cosmetics are usually non-returnable due to hygiene reasons. If the customer is unhappy with a shade recommendation experience, create a ticket for review."
+        }
+      ]
+    },
+    {
+      "category_name": "Billing & Payments",
+      "items": [
+        {
+          "id": "4.1",
+          "question": "What payment methods do you accept?",
+          "answer": "We accept UPI, credit cards, debit cards, net banking, supported digital wallets, and Cash on Delivery (COD) where available. We do not accept checks or money orders."
+        },
+        {
+          "id": "4.2",
+          "question": "Why was my payment declined?",
+          "answer": "A payment can be declined for several reasons.",
+          "details": [
+            "Insufficient balance or credit limit reached.",
+            "Incorrect card details, OTP, or CVV entered.",
+            "UPI or bank-side authorization failure.",
+            "The bank flagged the transaction as suspicious.",
+            "COD may not be available for some PIN codes or order values."
+          ]
+        },
+        {
+          "id": "4.3",
+          "question": "I was charged twice for the same order. What should I do?",
+          "answer": "A duplicate charge is often a temporary bank authorization hold, not a true double charge. The secondary hold is usually reversed within 3-5 business days. If both charges are confirmed as posted transactions, create a billing dispute ticket and escalate to Tier 2 immediately.",
+          "escalation_triggers": [
+            "Confirmed duplicate posted charge"
+          ]
+        },
+        {
+          "id": "4.4",
+          "question": "How do I apply a promo code or coupon?",
+          "answer": "Promo codes can be applied on the cart or checkout page before payment. Only one promo code can typically be used per order unless explicitly stated otherwise. Promo codes cannot usually be applied after the order is placed."
+        }
+      ]
+    },
+    {
+      "category_name": "Product Guidance, Shade Matching & Usage",
+      "items": [
+        {
+          "id": "5.1",
+          "question": "How do I find my foundation or concealer shade?",
+          "answer": "Guide the customer through shade matching in a simple way.",
+          "steps": [
+            "Ask for their broad skin tone category: fair, light-medium, medium, tan, deep, or rich.",
+            "Ask for undertone: warm, cool, or neutral.",
+            "If available, ask for the customer's current shade in another brand.",
+            "Recommend the closest Florence Beauty match and advise that lighting can affect appearance."
+          ]
+        },
+        {
+          "id": "5.2",
+          "question": "A Florence Beauty product caused irritation or an allergic reaction. What should I do?",
+          "answer": "Immediately advise the customer to stop using the product. Recommend washing off the product if applicable and consulting a dermatologist or medical professional if symptoms continue or worsen. Create a product-reaction ticket and escalate if the reaction appears severe.",
+          "escalation_triggers": [
+            "Customer reports swelling, burning, rash, severe irritation, or medical treatment related to product use"
+          ]
+        },
+        {
+          "id": "5.3",
+          "question": "My product looks different from the website images. Why?",
+          "answer": "Explain that product shades and finishes may appear different due to screen brightness, camera lighting, studio lighting, and skin undertones. If the customer believes the wrong item was sent, collect photos and create a verification ticket."
+        },
+        {
+          "id": "5.4",
+          "question": "How should I store my Florence Beauty products?",
+          "answer": "Products should be stored in a cool, dry place away from direct sunlight, humidity, and excessive heat. Lids and caps should be closed tightly after use to maintain product quality."
+        },
+        {
+          "id": "5.5",
+          "question": "What is the shelf life of makeup products?",
+          "answer": "General shelf life guidance after opening:",
+          "details": [
+            "Foundation: 12 months.",
+            "Concealer: 12 months.",
+            "Lipstick: 18-24 months.",
+            "Mascara: 6 months.",
+            "Eyeliner: 6-12 months.",
+            "Powder products: 24 months."
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Ingredients, Claims & Product Safety",
+      "items": [
+        {
+          "id": "6.1",
+          "question": "Are Florence Beauty products cruelty-free?",
+          "answer": "Yes. Florence Beauty products are cruelty-free and are not tested on animals."
+        },
+        {
+          "id": "6.2",
+          "question": "Are your products vegan?",
+          "answer": "Many Florence Beauty products are vegan. Customers should check the individual product page or ingredients list for product-specific confirmation."
+        },
+        {
+          "id": "6.3",
+          "question": "Are the products suitable for sensitive skin?",
+          "answer": "Many products are formulated to be gentle, but individual reactions can vary. Always advise customers with sensitive skin to perform a patch test before first use."
+        },
+        {
+          "id": "6.4",
+          "question": "Are your products paraben-free and sulfate-free?",
+          "answer": "Florence Beauty products are formulated without parabens and sulfates where stated on the product label or product page. For ingredient-specific questions, refer to the official ingredient list."
+        }
+      ]
+    },
+    {
+      "category_name": "Loyalty Program & Promotions",
+      "items": [
+        {
+          "id": "7.1",
+          "question": "What is the Florence Glow Rewards program?",
+          "answer": "Florence Glow Rewards is our loyalty program that allows customers to earn points on eligible purchases.",
+          "details": [
+            "Silver: 1 point per ₹100 spent.",
+            "Gold: 1.5 points per ₹100 spent.",
+            "Platinum: 2 points per ₹100 spent plus priority access to launches and selected benefits."
+          ]
+        },
+        {
+          "id": "7.2",
+          "question": "How do I redeem my Florence Glow Rewards points?",
+          "answer": "Points can be redeemed at checkout on eligible orders. A minimum redemption threshold may apply. Points cannot be exchanged for cash or transferred between accounts unless explicitly permitted by program rules."
+        },
+        {
+          "id": "7.3",
+          "question": "Do you run sales, festive discounts, or influencer promo codes?",
+          "answer": "Yes. Florence Beauty may run seasonal promotions, festive sales, new-launch offers, and influencer coupon campaigns. Promo code terms, validity windows, and product exclusions may apply."
+        }
+      ]
+    },
+    {
+      "category_name": "Quality Assurance & Product Defects",
+      "items": [
+        {
+          "id": "8.1",
+          "question": "What if the product quality seems defective?",
+          "answer": "If a product appears defective, leaked, dried out, broken, or unusable on arrival, ask the customer to report it within 48 hours of delivery with clear photos or video. Verified defects are eligible for refund or replacement according to policy."
+        },
+        {
+          "id": "8.2",
+          "question": "What voids eligibility for quality claims?",
+          "answer": "Claims may be denied in the following cases.",
+          "details": [
+            "The product appears heavily used or tampered with.",
+            "No supporting photos, videos, or order details are provided where required.",
+            "The issue is reported outside the claim window.",
+            "Normal product variation is mistaken for damage or defect."
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Agent Behavior & Response Policies",
+      "items": [
+        {
+          "id": "9.1",
+          "question": "How should I respond to a customer who is frustrated or upset?",
+          "answer": "Follow this de-escalation framework.",
+          "steps": [
+            "Acknowledge: 'I understand how disappointing or frustrating this must feel, and I'm sorry you've had this experience.'",
+            "Empathize: Show the customer their concern is valid without admitting fault beyond policy.",
+            "Clarify: Ask one focused question to narrow down the issue.",
+            "Act: Provide the next concrete step, resolution path, or escalation.",
+            "Never use dismissive phrases like 'that's not our policy' or 'there's nothing I can do.'"
+          ]
+        },
+        {
+          "id": "9.2",
+          "question": "What should I do if I cannot resolve an issue?",
+          "answer": "If the issue requires capabilities beyond this agent's scope, follow these steps.",
+          "steps": [
+            "Acknowledge that you are unable to fully resolve the issue in the current session.",
+            "Create a detailed support ticket summarizing the issue and steps already attempted.",
+            "Provide the customer with the ticket ID if available.",
+            "Escalate to a human specialist if the issue involves health, fraud, legal concerns, or policy exceptions."
+          ]
+        },
+        {
+          "id": "9.3",
+          "question": "How should I handle customers asking for exceptions to policy?",
+          "answer": "Be empathetic but do not promise exceptions that are not approved. If the customer requests an exception to a return, refund, or promo policy, create a ticket for Tier 2 review. Never approve exceptions without authorization."
+        },
+        {
+          "id": "9.4",
+          "question": "When should I create a support ticket?",
+          "answer": "Create a support ticket in these situations.",
+          "details": [
+            "The issue cannot be resolved in the current session.",
+            "A refund, replacement, courier investigation, or manual review is required.",
+            "The issue involves allergy, product reaction, fraud, or account security.",
+            "The customer explicitly asks for follow-up from a human agent.",
+            "A policy exception review is needed."
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Escalation Protocols",
+      "items": [
+        {
+          "id": "10.1",
+          "question": "CRITICAL ESCALATION PROTOCOL (Internal Agent Rules)",
+          "answer": "The AI agent MUST immediately call escalate_to_human under the following conditions. DO NOT ask clarifying questions first. Escalate immediately, then inform the customer.",
+          "escalation_triggers": [
+            "Customer reports severe allergic reaction, swelling, burning, bleeding, or medical emergency.",
+            "Customer mentions legal action, lawyers, consumer court, or regulatory complaint.",
+            "Customer reports unauthorized account access or fraudulent charges.",
+            "Customer uses abusive, threatening, or profane language.",
+            "Customer explicitly demands to speak to a human or manager.",
+            "The agent has asked 3 or more clarifying questions without resolving the issue."
+          ]
+        },
+        {
+          "id": "10.2",
+          "question": "What information must I collect before escalating?",
+          "answer": "Before calling escalate_to_human, collect as much of the following as possible.",
+          "details": [
+            "Customer email address or phone number.",
+            "Order number.",
+            "Brief description of the issue (1-2 sentences).",
+            "Photos or videos if relevant.",
+            "Steps already attempted.",
+            "Urgency level: Critical, High, or Normal."
+          ]
+        },
+        {
+          "id": "10.3",
+          "question": "What should I tell the customer after escalating?",
+          "answer": "Use the following script after escalation.",
+          "steps": [
+            "Inform the customer: 'I've escalated your case to a specialist on our team who can assist you further.'",
+            "For Critical cases: 'Given the nature of your concern, I've marked this as urgent.'",
+            "For High-priority cases: 'A specialist will review this as soon as possible.'",
+            "For Normal cases: 'You can expect a response within 1-2 business days if follow-up is required.'",
+            "Do not promise specific outcomes that have not yet been approved."
+          ]
+        },
+        {
+          "id": "10.4",
+          "question": "What is the difference between Tier 1 and Tier 2 support?",
+          "answer": "Support tiers and their responsibilities.",
+          "details": [
+            "Tier 1 (This Agent): Handles standard inquiries, order status, shipping questions, basic refunds guidance, product information, and knowledge-base-based responses.",
+            "Tier 2 (Human Specialist): Handles medical-reaction complaints, billing disputes, fraud and security, policy exceptions, courier escalations, and legal matters.",
+            "Tier 3 (Internal Legal/Quality Team): Handles serious product-safety review, formal regulatory complaints, and high-risk cases."
+          ]
+        }
+      ]
+    }
+  ]
+}
